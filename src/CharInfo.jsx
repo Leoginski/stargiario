@@ -3,21 +3,31 @@ import React, {Component} from 'react';
 class CharInfo extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            expanded: false,
-        }
+        this.state = {expand: false};
     }
 
     toggle() {
-        this.setState({expanded: !this.state.expanded})
+        this.setState({expand: !this.state.expand});
     }
 
     render() {
         const info = this.props.charInfo;
-        if (!this.state.expanded) {
-            return <p className="btn btn-info" onClick={this.toggle}> Show more...</p>
+        if (!this.state.expand) {
+            return <p className="btn btn-info" onClick={this.toggle.bind(this)}> Show more...</p>
         }
-        return <p className="btn btn-info" onClick={this.toggle}> Show less..</p>
+        return (
+            <div>
+                <p className="btn btn-info" onClick={this.toggle.bind(this)}> Show less..</p>
+                <ul>
+                    <li>Data de Nascimento: {info.birth_year}</li>
+                    <li>Cor dos Olhos: {info.eye_color}</li>
+                    <li>Cor do Cabelo: {info.hair_color}</li>
+                    <li>Sexo: {info.gender}</li>
+                    <li>Altura: {info.height}</li>
+                    <li>Peso: {info.mass}</li>
+                </ul>
+            </div>
+        );
     }
 }
 
