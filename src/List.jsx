@@ -20,13 +20,16 @@ class List extends Component {
             }
         );
         return (
-            <div className="">
-                <input value={this.state.search} onChange={this.updateSearch.bind(this)}/>
+            <div className={'container'}>
+                <div className={'container bg-info rounded text-bold text-white'} style={{width: 250, height: 100}}>
+                    <h5>Buscar</h5>
+                    <input value={this.state.search} onChange={this.updateSearch.bind(this)}/>
+                </div>
                 {
                     filteredPeople.map((p) => {
                         return (
-                            <div key={p.url}>
-                                <h4 className="char-name">{p.name}</h4>
+                            <div key={p.url} className={'container bg-dark rounded-circle'} style={{width: 600}}>
+                                <h4 className="char-name text-bold text-warning">{p.name}</h4>
                                 <CharInfo charInfo={p}/>
                             </div>
                         )

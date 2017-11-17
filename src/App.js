@@ -28,20 +28,6 @@ class App extends Component {
         })
     }
 
-    // getPeople(param) {
-    //     let result = [];
-    //     axios.get("https://swapi.co/api/people/").then((response) => {
-    //         response.data.results.map((p) => {
-    //             if (p.name.toLowerCase().indexOf(param.toLowerCase()) >= 0) {
-    //                 result.push(p);
-    //             }
-    //         });
-    //     });
-    //     this.setState({result: result});
-    //     // let list = <List people={results}/>;
-    //     // document.getElementById('results').append(list);
-    // }
-
     render() {
         return (
             <div className="App">

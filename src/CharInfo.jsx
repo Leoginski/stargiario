@@ -18,14 +18,14 @@ class CharInfo extends Component {
         return (
             <div>
                 <p className="btn btn-info" onClick={this.toggle.bind(this)}> Show less..</p>
-                <ul>
-                    <li>Data de Nascimento: {info.birth_year}</li>
-                    <li>Cor dos Olhos: {info.eye_color}</li>
-                    <li>Cor do Cabelo: {info.hair_color}</li>
-                    <li>Sexo: {info.gender}</li>
-                    <li>Altura: {info.height}</li>
-                    <li>Peso: {info.mass}</li>
-                </ul>
+                <div className={'container text-bold text-white'}>
+                    <p>Data de Nascimento: {info.birth_year}</p>
+                    <p>Cor dos Olhos: {info.eye_color}</p>
+                    <p>Cor do Cabelo: {info.hair_color}</p>
+                    <p>Sexo: {info.gender}</p>
+                    <p>Altura: {info.height}</p>
+                    <p>Peso: {info.mass}</p>
+                </div>
             </div>
         );
     }
