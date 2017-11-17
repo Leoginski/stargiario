@@ -1,21 +1,40 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
+import List from './List';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+            films: [],
+            people: [],
+            planets: [],
+            species: [],
+            starships: [],
+            vehicles: [],
+        }
+    }
+
+    componentDidMount() {
+        this.getPeople();
+    }
+
+    getPeople() {
+        return axios.get("https://swapi.co/api/people/").then((response) => {
+            this.setState({people: response.data.results});
+        })
+    }
+
+    render() {
+        const {people} = this.state.people;
+        return (
+            <div className="App">
+                <List people={this.state.people}/>
+            </div>
+        );
+    }
 }
 
 export default App;
