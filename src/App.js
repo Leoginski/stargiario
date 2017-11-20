@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import './App.css';
+import Routes from './routes';
 import axios from 'axios';
 import List from "./List";
 
-class App extends Component {
+/*class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -35,6 +35,6 @@ class App extends Component {
             </div>
         );
     }
-}
+}*/
 
-export default App;
+export default ()=> <Routes/>;
